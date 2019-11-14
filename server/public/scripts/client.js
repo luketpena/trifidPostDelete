@@ -20,3 +20,21 @@ function testGet(){
         console.log( err );
     })
 } // end testGet
+
+function testPost(){
+    // assemble objectToSend
+    let objectToSend = {
+        test: 'this is a test'
+    } // end objectToSend
+    // AJAX POST to our server
+    $.ajax({
+        type: 'POST',
+        url: '/test',
+        data: objectToSend
+    }).then( function( response ){
+        console.log( 'back from POST with:', response );
+    }).catch( function( err ){
+        alert( 'error with post. check console for details' );
+        console.log( err );
+    }) //end AJAX
+} // end testPost
