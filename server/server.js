@@ -8,7 +8,7 @@ app.use( express.static( 'server/public' ) );
 // also needed for POST
 app.use( bodyParser.urlencoded( { extended: true } ) );
 // globals
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // server
 app.listen( port, ()=>{
